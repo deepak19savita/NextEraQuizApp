@@ -10,6 +10,7 @@
         function genresLoadCompleted(response) {
             $scope.subjects = response.data;
 
+
         }
 
         function genresLoadFailed(response) {
