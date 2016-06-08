@@ -1,0 +1,14 @@
+﻿<div class="jumbotron text-center ng-scope">
+    <div class="col-sm-6">
+        <!-- FORM ============ -->
+        <form name="subjectform" ng-submit="submitForm()" novalidate>
+            <!-- NAME -->
+            <div class="form-group" ng-class="{ 'has-error' : subjectForm.SubjectName.$invalid && !subjectForm.SubjectName.$pristine }">
+                <label>Name</label>
+                <input type="text" name="SubjectName" class="form-control" ng-model="subject.SubjectName" required>
+                <p ng-show="subjectForm.SubjectName.$invalid && !subjectForm.SubjectName.$pristine" class="help-block">You SubjectName is required.</p>
+            </div>
+            <button type="submit" class="btn btn-primary" ng-disabled="subjectForm.$invalid">Submit</button>
+        </form>
+    </div>
+</div>

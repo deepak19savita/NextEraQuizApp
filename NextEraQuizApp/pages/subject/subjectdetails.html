@@ -1,0 +1,18 @@
+﻿<div class="jumbotron text-center ng-scope">
+    <div class=" col-sm-6">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Subject</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="subject in subjects">
+                    <td>{{$index + 1}}</td>
+                    <td>{{ subject.SubjectName }} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
