@@ -56,9 +56,8 @@ namespace NextEraQuizApp.Controller
                 return response;
             });
         }
-        [HttpPost]
-        [Route("add")]
-        public HttpResponseMessage Add(HttpRequestMessage request, Subject subject)
+        
+        public HttpResponseMessage Post(HttpRequestMessage request, Subject subject)
         {
             return CreateHttpResponse(request, () =>
             {
@@ -72,6 +71,7 @@ namespace NextEraQuizApp.Controller
                 {
                     Subject newSubject = new Subject();
                     _EntityRepository.Subjects.Add(subject);
+                    _EntityRepository.SaveChanges();
                     response = request.CreateResponse(HttpStatusCode.Created, subject);
                 }
 

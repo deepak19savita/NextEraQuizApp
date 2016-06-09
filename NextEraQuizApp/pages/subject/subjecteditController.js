@@ -1,17 +1,18 @@
 ﻿(function (scotchApp) {
     'use strict';
     scotchApp.controller('subjecteditController', function ($scope, $http) {
-        $scope.subject = [];
+        $scope.subject = {};
         $scope.submitForm = function () {
 
             // check to make sure the form is completely valid
             if ($scope.subjectform.$valid) {
                 if (angular.isDefined($scope.subject)) {
-                    $scope.subject.push({
-                        "SubjectName": $scope.subject.SubjectName
-                    });
-                    $scope.user = {};
+                    //$scope.subject.push({
+                    //    "SubjectName": $scope.subject.SubjectName
+                    //});
+                   
                     UpdateMovieModel();
+                    $scope.subject = [];
                 }
             }
 
@@ -32,7 +33,7 @@
                     });
         }
         function UpdateMovieModel() {
-            apiService.post('/api/subject', $scope.subject,
+            $http.post('/api/subject', $scope.subject,
             updateMovieSucceded,
             updateMovieFailed);
         }
